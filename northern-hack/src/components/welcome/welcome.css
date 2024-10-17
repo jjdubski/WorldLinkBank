@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0px;    
 }
 
 h1{
@@ -55,5 +56,6 @@ h3{
         cursor: pointer;
         background-color: var(--dark-green);
         
+
     }
 }

@@ -4,14 +4,12 @@ import './chart.css';
 const Chart = () => {
   return (
     <div className='chart-cont'>
-        <div className="color-header"></div>
+      <div className="chart-header">Live Currency Rates</div>
+      <div className="color-header">
+        <p>Name</p>
+        <p>Rate</p>
+      </div>
       <table className="chart-table">
-        <thead>
-          <tr className="chart-header">
-            <th className="table-header">Name</th>
-            <th className="table-header">Rate</th>
-          </tr>
-        </thead>
         <tbody>
           <tr className="chart-row">
             <td className="table-cell-c">USD / JPY</td>
