@@ -4,9 +4,6 @@ from flask_cors import CORS
 
 fx_rates_bp = Blueprint('fx_rates', __name__)
 CORS(fx_rates_bp)
-# EXCHANGE_API_KEY = "b2d7bed5405d85e5d85ce1b0"
-TOP_CURRENCIES = ["USD", "JPY", "EUR", "GBP", "AUD"]
-
 
 # API Configuration - using ExchangeRate-API for real-time conversion
 EXCHANGE_RATE_API_KEY = '63575e6b4bd69d124ff1f2e1'
@@ -70,10 +67,7 @@ def get_fx_rates():
     results = []  # List to hold conversion data
 
     for i in range(len(TOP_CURRENCIES)):
-
         for j in range(len(TOP_CURRENCIES)):
-
-
             if i != j:
                 conversion_data = get_fx_rate_pairs(TOP_CURRENCIES[i], TOP_CURRENCIES[j])
                 if conversion_data:
