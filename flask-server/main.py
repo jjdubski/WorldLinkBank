@@ -5,7 +5,14 @@ from fx_rates.routes import fx_rates_bp  # Importing the blueprint from routes.p
 app = Flask(__name__)
 CORS(app)
 
+
 # Register the fx_rates_bp Blueprint without an extra prefix
+
+#@app.route('/hello', methods=['GET'])
+#def hello_world():
+#    return jsonify({"message": "Frit"})
+
+
 app.register_blueprint(fx_rates_bp)
 
 if __name__ == '__main__':
