@@ -1,0 +1,79 @@
+.navbar-cont {
+    border-bottom: 2px solid var(--green);
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    background-color: var(--light-gray);
+
+}
+
+.navbar-right {
+    height: 100%;
+    width: 30%;
+    display: flex;
+}
+
+.menu-cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar-left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+
+.menu-item{
+    cursor: pointer;
+    font-size: 1.1rem;
+
+    &:hover{
+        border-bottom: 2px solid black;
+        transition: all 0.1s ease-out;
+    }
+}
+
+.menu-item-button{
+    background-color: var(--dark-green);
+    outline: none;
+    border: none;
+    padding: 14px 24px;
+    color:white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--dark-green);
+    font-size: 1rem;
+
+
+
+    &:hover{
+        border: 2px solid var(--dark-green);
+        background-color: white;
+        color:black;
+        transition: all 0.2s ease-out;
+        font-size: 1rem;
+        
+
+    }
+}
+
+.left-menu{
+    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
