@@ -3,20 +3,18 @@ from flask import jsonify
 from . import fx_rates_bp
 
 EXCHANGE_API_KEY = "b2d7bed5405d85e5d85ce1b0"
-TOP_10_CURRENCIES = ["KWD", "BHD", "OMR", "JOD", "GBP", "GIP", "KYD", "EUR", "CHF", "USD"]
+TOP_CURRENCIES = ["USD", "JPY", "EUR", "GBP", "AUD"]
 
 @fx_rates_bp.route('/api/fx-rates', methods=['GET'])
 def get_fx_rates():
     results = []  # List to hold conversion data
 
-    for i in range(len(TOP_10_CURRENCIES)):
-        for j in range(i, len(TOP_10_CURRENCIES)):
+    for i in range(len(TOP_CURRENCIES)):
+        for j in range(i, len(TOP_CURRENCIES)):
             if i != j:
-                conversion_data = get_fx_rate_pairs(TOP_10_CURRENCIES[i], TOP_10_CURRENCIES[j])
-                print(conversion_data)
+                conversion_data = get_fx_rate_pairs(TOP_CURRENCIES[i], TOP_CURRENCIES[j])
                 if conversion_data:
                     results.append(conversion_data)
-
     return jsonify({
         "result": "success",
         "data": results  # Return all conversion rates in the response

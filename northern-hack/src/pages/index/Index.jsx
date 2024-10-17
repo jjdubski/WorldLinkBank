@@ -10,7 +10,7 @@ const Index = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:5000/api/fx-rates');
-        setData(response.data.data); // Update the data state with the conversion rates
+        setData(response.data); // Update the data state with the conversion rates
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(error); // Update the error state
@@ -34,9 +34,9 @@ const Index = () => {
     <div>
       <h1>FX Rates</h1>
       <ul>
-        {Object.entries(data).map(([currency, rate]) => (
-          <li key={currency}>
-            {currency}: {rate}
+        {data.data.map(({ from, to, conversion_rate }, index) => (
+          <li key={index}>
+            {from} to {to}: {conversion_rate}
           </li>
         ))}
       </ul>
