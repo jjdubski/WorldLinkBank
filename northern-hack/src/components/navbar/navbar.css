@@ -1,29 +1,30 @@
 .navbar-cont {
     border-bottom: 2px solid var(--green);
     width: 100vw;
-    height: 5rem;
+    height: 5.5rem;
     display: flex;
     background-color: var(--light-gray);
 
 }
-
 .navbar-right {
     height: 100%;
-    width: 30%;
+    width: 50%;
     display: flex;
+    justify-content: end;
 }
 
-.menu-cont {
-    width: 100%;
+.menu-cont-navbar {
     height: 100%;
+    width: 50%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-}
+} 
 
 .navbar-left {
-    width: 70%;
+    width: 50%;
     height: 100%;
     display: flex;
 }
@@ -42,7 +43,7 @@
     background-color: var(--dark-green);
     outline: none;
     border: none;
-    padding: 14px 24px;
+    padding: 10px 20px;
     color:white;
     border-radius: 5px;
     cursor: pointer;

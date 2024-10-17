@@ -8,12 +8,10 @@ const Navbar = () => {
             <div className="left-menu">
                 <img src="./images/logo.png" alt="" className="logo-image" />
                 <p className="title">WorldLink</p>
-             
-
             </div>
         </div>
         <div className="navbar-right">
-            <div className="menu-cont">
+            <div className="menu-cont-navbar">
                 <p className="menu-item">Transactions</p>
                 <p className="menu-item">Account</p>
                 <p className="menu-item">Rates</p>
