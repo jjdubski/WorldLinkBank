@@ -10,7 +10,7 @@ const Navbar = () => {
                 <Link to="/">
                 <img src="./images/logo.png" alt="" className="logo-image" />
                 </Link>
-                    <p className="title">WorldLink</p>
+                    <p className="title">World Link Bank</p>
             </div>
         </div>
         <div className="navbar-right">
