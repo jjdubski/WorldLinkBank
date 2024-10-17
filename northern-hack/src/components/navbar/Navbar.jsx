@@ -6,14 +6,12 @@ const Navbar = () => {
     <div className='navbar-cont'>
         <div className="navbar-left">
             <div className="left-menu">
-                <img src="vite.svg" alt="" className="logo-image" />
+                <img src="" alt="" className="logo-image" />
                 <p className="title">WorldLink</p>
-             
-
             </div>
         </div>
         <div className="navbar-right">
-            <div className="menu-cont">
+            <div className="menu-cont-navbar">
                 <p className="menu-item">Transactions</p>
                 <p className="menu-item">Account</p>
                 <p className="menu-item">Rates</p>
