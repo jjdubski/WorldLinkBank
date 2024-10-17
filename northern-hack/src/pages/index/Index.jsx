@@ -22,18 +22,22 @@ const index = () => {
             <tr className='rate'>
               <td>USD/JPY</td>
               <td>1.00</td>
+              <td>up</td>
             </tr>
             <tr className='rate'>
               <td>GBP/USD</td>
               <td>0.72</td>
+              <td>down</td>
             </tr>
             <tr className='rate'>
               <td>EUR/JPY</td>
               <td>0.82</td>
+              <td>up</td>
             </tr>
             <tr className='rate'>
               <td>JPY/GBP</td>
               <td>109.00</td>
+              <td>down</td>
             </tr>
             <h2>Net Worth ($100)</h2>
             <select>
