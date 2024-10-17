@@ -54,8 +54,10 @@ const Index = () => {
   return (
     <>
     <Navbar/>
-    <Welcome/>
-    <Chart/>
+    <div className='index'>
+      <Welcome/>
+      <Chart/>
+    </div>
     </>
   )
 }
