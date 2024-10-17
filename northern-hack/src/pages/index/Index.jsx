@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 
 
-const index = () => {
+  // Render the data (modifying to display currency rates)
   return (
     <>
       <Navbar/>
@@ -48,5 +48,3 @@ const index = () => {
     </>
   )
 }
-
-export default index
