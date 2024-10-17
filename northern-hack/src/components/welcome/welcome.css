@@ -46,13 +46,16 @@ h3{
     border-radius: 5px;
     background-color: white;
     color:black;
-    transition: all 0.2s ease-out;
-    border: 2px solid var(--dark-green);
+    transition: all 0.15s ease-out;
+    border: 2px solid white;
+
 
     &:hover{
-        background-color: var(--dark-green);
+        border: 2px solid white;
         color:white;
         cursor: pointer;
-        border: 2px solid var(--light-green);
+        background-color: var(--dark-green);
+        
+
     }
 }
