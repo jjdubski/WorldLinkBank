@@ -1,13 +1,16 @@
 import React from 'react'
 import "./navbar.css"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <div className='navbar-cont'>
         <div className="navbar-left">
             <div className="left-menu">
+                <Link to="/">
                 <img src="./images/logo.png" alt="" className="logo-image" />
-                <p className="title">WorldLink</p>
+                </Link>
+                    <p className="title">WorldLink</p>
             </div>
         </div>
         <div className="navbar-right">
