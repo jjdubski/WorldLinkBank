@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 import Navbar from '../../components/navbar/Navbar'
 import Chart from '../../components/chart/Chart'
-import "./index.css"
 import Welcome from '../../components/welcome/Welcome';
-
+import "./index.css"
 
 
 const Index = () => {

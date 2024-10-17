@@ -15,9 +15,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
             <div className="menu-cont-navbar">
-                <p className="menu-item">Transactions</p>
-                <p className="menu-item">Account</p>
-                <p className="menu-item">Rates</p>
+                <Link to='/portfolio'><p className="menu-item">Portfolio</p></Link>
+                <Link to='/rates'><p className="menu-item">Rates</p></Link>
+                <Link to='/trade'><p className="menu-item">Trade</p></Link>
                 <button className="menu-item-button">Dashboard</button>
             </div>
         </div>
