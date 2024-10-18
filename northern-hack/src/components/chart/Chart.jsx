@@ -6,15 +6,14 @@ const Chart = () => {
   const [fxRates, setFxRates] = useState([]);
   const [filteredRates, setFilteredRates] = useState([]);
   const [error, setError] = useState(null);
-  const [filter, setFilter] = useState("ALL"); // State for filtering
+  const [filter, setFilter] = useState("ALL"); 
 
   useEffect(() => {
-    // Function to fetch FX rates from the backend
     const fetchFxRates = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:5000/fx_rates/api/fx-rates');
         setFxRates(response.data.data);
-        setFilteredRates(response.data.data); // Initially set filtered rates to all rates
+        setFilteredRates(response.data.data); 
       } catch (error) {
         console.error('Error fetching FX rates:', error);
         setError('Failed to fetch FX rates. Please try again later.');
@@ -24,7 +23,6 @@ const Chart = () => {
     fetchFxRates();
   }, []);
 
-  // Function to handle the filter change
   const handleFilterChange = (event) => {
     const selectedFilter = event.target.value;
     setFilter(selectedFilter);
