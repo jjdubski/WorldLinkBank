@@ -6,8 +6,8 @@ import NetworthList from "./networthList";
 const Networth = () => {
     return (
         <div className='networth'>
-            <NetworthGraph/>
             <NetworthList/>
+            <NetworthGraph/>
         </div>
     )
 }
