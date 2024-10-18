@@ -1,0 +1,42 @@
+.graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.networth {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.graph-cont {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.chart-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#networth_list {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0 0 30px 50px;
+    padding: 0;
+}
+
+.chart-table {
+    width: 100%;
+    border-collapse: collapse;
+}

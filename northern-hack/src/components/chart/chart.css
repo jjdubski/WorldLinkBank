@@ -1,0 +1,75 @@
+.chart-cont {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-height: 500px;
+    height: fit-content;
+    overflow: hidden;
+    margin: 50px;
+    padding-bottom: 30px;
+    align-items: center;
+    min-height: 600px;
+    
+}
+
+.chart-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px -10px rgba(134, 134, 134, 0.5);
+    table-layout: fixed;
+}
+
+.chart-header{
+    text-align: center;
+    background-color: var(--light-gray);
+    margin-bottom: 10px;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.color-header{
+    display: flex;
+    color: var(--white);
+    font-weight: 600;
+    background-color: var(--dark-green);
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    gap: auto;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.color-header p{
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: var(--white);
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+
+.table-cell {
+    padding: 10px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    font-weight: 600;
+    color:black;
+    text-align: center; 
+    align-content: center;
+}
+
+.table-cell-c{
+    padding: 0 10px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    font-weight: 400;
+    text-align: center;
+}
+
+.chart-row{
+    height: 60px;
+}
+
+.filter-cont{
+    margin: 0 0 10px 0;
+}
