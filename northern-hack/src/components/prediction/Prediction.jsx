@@ -10,6 +10,7 @@ const Prediction = () => {
 
   return (
     <div className='prediction-cont'>
+        <p className="prediction-title">FX Prediction Model</p>
         <div className="prediction-display">
             <div className="prediction-search-output">
                 <div className="prediction-results-table">
