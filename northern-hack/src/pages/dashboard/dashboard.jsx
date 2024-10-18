@@ -3,6 +3,7 @@ import "./dashboard.css";
 import Navbar from "../../components/navbar/Navbar";
 import LineChart from "../../components/dashboard/LineChart";
 import axios from 'axios'; // Missing axios import
+import Prediction from "../../components/prediction/Prediction";
 
 const Dashboard = () => {
     // State to store the predicted data fetched from the API
@@ -31,7 +32,10 @@ const Dashboard = () => {
             {error ? ( // Conditional rendering in case there's an error
                 <div>{error}</div>
             ) : (
+                <>
+                <Prediction/>
                 <LineChart chartData={predData} /> // Display LineChart with predData
+                </>
             )}
 
         </>
