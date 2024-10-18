@@ -95,3 +95,9 @@ def get_fx_rate_pairs(curr1, curr2):
     else:
         print(f'Failed to fetch data for {curr1} to {curr2}: {response.status_code}')
         return None
+
+if __name__ == '__main__':
+    app = Flask(__name__)
+    CORS(app)
+    app.register_blueprint(fx_rates_bp, url_prefix='/fx_rates')
+    app.run(debug=True, host='0.0.0.0', port=5000)
