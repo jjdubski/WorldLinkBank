@@ -1,50 +1,36 @@
-.networth_list {
+.graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.networth {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-cont{
     display: flex;
     flex-direction: column;
     width: 50%;
     height: fit-content;
-    overflow: hidden;
-    margin: 50px;
-    padding-bottom: 30px;
     align-items: center;
     border-radius: 0 0 10px 10px;
 }
 
-.networth_table {
-    width: 100%;
+.chart-title{
     text-align: center;
-    border-collapse: collapse;
-    box-shadow: 5px 5px 10px rgb(200, 200, 200);
+    margin-bottom: 20px;
 }
 
-/* .network_table_header{
-    text-align: center;
-    background-color: var(--light-gray);
-    margin-bottom: 10px;
-    font-size: larger;
-    font-weight: 600;
-} */
-
-
-/* tr td:first-child{
-    text-align: left;
-    padding-left: 9vw;
-}
-tr td:last-child{   
-    padding-right: 8vw;
-} */
-
-/* 
-.chart-header{
-    text-align: left;
-    font-weight: 600;
-    font-size: 1rem;
-    border-bottom: 1px solid rgb(180, 179, 179);
-    background-color: var(--light-green);
-    z-index: -1;
-} */
-}
-
-.filter-cont{
-    margin: 0 0 10px 0;
+#networth_list{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0 20px 30px 0; 
+    padding: 0;
 }

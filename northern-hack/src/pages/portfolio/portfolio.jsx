@@ -8,6 +8,7 @@ const Portfolio = () => {
     return (
         <>
         <Navbar/>
+        <h1>Current Holdings</h1>
         <div className='portfolio'>
             <Networth/>
         </div>
