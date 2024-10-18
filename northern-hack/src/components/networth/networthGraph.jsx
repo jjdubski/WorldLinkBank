@@ -1,37 +1,44 @@
 import React from "react";
 import "./networth.css";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import {
+    Chart as ChartJS,
+    ArcElement,
+    Tooltip,
+    Legend
+} from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(
+    ArcElement, 
+    Tooltip,
+    Legend
+);
 
-const NetworthGraph = ({ holdings }) => {
-    // Check if holdings exist before rendering the chart
+const NetworthGraph = ({ holdings, conversionRates }) => {
     if (!holdings || Object.keys(holdings).length === 0) {
         return <p>Loading graph data...</p>;
     }
 
-    // Extract labels and data from holdings
-    const labels = Object.keys(holdings);
-    const dataValues = Object.values(holdings).map(value => parseFloat(value));
+    // Convert all holdings to USD
+    const convertedHoldings = Object.entries(holdings).map(([currency, value]) => {
+        if (currency === 'USD') {
+            return value; // USD does not need conversion
+        } else {
+            const rateKey = `${currency}_USD`;
+            const rate = conversionRates[rateKey];
+            return rate ? value * rate : 0;
+        }
+    });
 
-    if (labels.length === 0 || dataValues.every(value => value === 0)) {
-        return <p>No data available to display.</p>;
-    }
-
+    // Prepare data for the graph
     const data = {
-        labels,
+        labels: Object.keys(holdings),
         datasets: [
             {
-                data: dataValues,
+                data: convertedHoldings,
                 backgroundColor: ['#4caf50', '#0c533f', '#326b58', '#01a93a', '#378238']
             }
         ]
-    };
-
-    const options = {
-        responsive: true,
-        maintainAspectRatio: false,
     };
 
     return (
@@ -39,11 +46,11 @@ const NetworthGraph = ({ holdings }) => {
             <h2>Networth Distribution</h2>
             <div className="graph-container">
                 <div className="networth-graph">
-                    <Pie data={data} options={options} />
+                    <Pie data={data} />
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default NetworthGraph;
