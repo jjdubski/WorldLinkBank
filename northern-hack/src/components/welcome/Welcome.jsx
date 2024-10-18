@@ -5,13 +5,17 @@ import { Link } from 'react-router-dom';
 const Welcome = () => {
   return (
     <div className='welcome-cont'>
-        <div className='text-align-welcome'>
-          <h1>Welcome to World Link Bank</h1>
-          <h3>At WorldLink, we specialize in providing comprehensive FX trading solutions that empower 
-            investors to navigate the complexities of the global currency markets. Our expert team 
-            combines cutting-edge technology, deep market insights, and a client-focused approach to deliver consistent results for traders of all levels.</h3>
-          <Link to="/trade"><button className="welcome-button">Start Trading FX</button></Link>
-      
+        <div className="left">
+            <div className="welcome-subtitle">FOREX EXCHANGE</div>
+            <div className="welcome-title">WORLD LINK BANK</div>
+            <div className="welcome-intro">At WorldLink, we provide comprehensive FX trading solutions that empower investors to navigate the complexities of the global currency markets. 
+            </div>
+            <Link to="/dashboard">
+                <div className="welcome-button">Dashboard</div>
+            </Link>
+        </div>
+        <div className="right">
+            <img src="./images/i.jpg" alt="" className="bg-main" />
         </div>
     </div>
   )

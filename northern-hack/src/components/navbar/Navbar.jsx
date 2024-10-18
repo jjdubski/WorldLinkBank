@@ -11,7 +11,7 @@ return (
                     <img src="./images/logo.png" alt="" className="logo-image" />
                     <div className="stacker">
                         <p className="title">WorldLink</p>
-                        <p className="title-asset">Currency Exhange</p>
+                        <p className="title-asset">Currency Exchange</p>
                     </div>
                     
                 </Link>
