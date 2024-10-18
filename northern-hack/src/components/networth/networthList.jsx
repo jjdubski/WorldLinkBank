@@ -1,7 +1,11 @@
 import React from "react";
 import "./networth.css";
 
+
+//const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
+
 const NetworthList = ({ holdings, onUpdate, equivalentInUSD }) => {
+
     if (!holdings || Object.keys(holdings).length === 0) {
         return <p>Loading holdings...</p>;
     }
