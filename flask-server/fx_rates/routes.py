@@ -6,7 +6,8 @@ fx_rates_bp = Blueprint('fx_rates', __name__)
 CORS(fx_rates_bp)
 
 # API Configuration - using ExchangeRate-API for real-time conversion
-EXCHANGE_RATE_API_KEY = '63575e6b4bd69d124ff1f2e1'
+EXCHANGE_RATE_API_KEY = "17f7319f83a74b9349ee77e2"
+# '63575e6b4bd69d124ff1f2e1'
 EXCHANGE_RATE_API_URL = "https://v6.exchangerate-api.com/v6/{}/latest/{}"
 
 # Helper function to get the exchange rate data
@@ -23,28 +24,25 @@ def get_exchange_rate(base_currency):
 def home():
     return "Server is running!", 200
 
-# Route to handle currency conversion
 @fx_rates_bp.route('/convert', methods=['GET'])
 def convert_currency():
-    # Extracting the parameters from the request
     base_currency = request.args.get('base_currency')
     target_currency = request.args.get('target_currency')
     amount = request.args.get('amount')
 
     if not base_currency or not target_currency or not amount:
         return jsonify({"error": "Invalid request. Please provide base_currency, target_currency, and amount."}), 400
-
     try:
         amount = float(amount)
+        if amount <= 0:
+            return jsonify({"error": "Amount must be greater than zero."}), 400
     except ValueError:
         return jsonify({"error": "Invalid amount format."}), 400
 
-    # Fetch exchange rates
     exchange_data = get_exchange_rate(base_currency)
     if not exchange_data:
         return jsonify({"error": "Failed to fetch exchange rate data."}), 500
 
-    # Perform the conversion
     rates = exchange_data.get("conversion_rates", {})
     if target_currency not in rates:
         return jsonify({"error": "Target currency not available."}), 400
@@ -59,6 +57,7 @@ def convert_currency():
         "conversion_rate": conversion_rate,
         "converted_amount": converted_amount
     })
+
 
 # Route to handle FX rates for top currencies
 @fx_rates_bp.route('/api/fx-rates', methods=['GET'])
