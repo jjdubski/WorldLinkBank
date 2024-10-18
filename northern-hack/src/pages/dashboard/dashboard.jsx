@@ -33,6 +33,7 @@ const Dashboard = () => {
             ) : (
                 <LineChart chartData={predData} /> // Display LineChart with predData
             )}
+
         </>
     );
 }

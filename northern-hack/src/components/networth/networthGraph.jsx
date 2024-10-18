@@ -44,11 +44,13 @@ const NetworthGraph = ({ holdings, conversionRates }) => {
     return (
         <div className="graph-cont">
             <h2>Networth Distribution</h2>
-            <div className="graph-container">
-                <div className="networth-graph">
-                    <Pie data={data} />
-                </div>
-            </div>
+            <div className="networth-graph">
+                <Pie 
+                    data={data}
+                    options={options}
+                    style={{ height: '300px', width: '300px'}}
+                />
+            </div>  
         </div>
     )
 }
