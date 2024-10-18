@@ -71,7 +71,7 @@ const Chart = () => {
               filteredRates.map((rate, index) => (
                 <tr className="chart-row" key={index}>
                   <td className="table-cell-c">{rate.from} / {rate.to}</td>
-                  <td className="table-cell">{rate.conversion_rate.toFixed(4)}</td>
+                  <td className="table-cell">{rate.conversion_rate.toFixed(2)}</td>
                 </tr>
               ))
             ) : (

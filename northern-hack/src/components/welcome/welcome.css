@@ -41,9 +41,9 @@ h3{
     background-color: var(--dark-green);
     outline: none;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 155px;
     background-color: white;
     color:black;
     transition: all 0.2s ease-in-out;
