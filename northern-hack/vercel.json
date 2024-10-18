@@ -3,6 +3,6 @@
         {"source": "./", "destination": "../src"}
     ],
     "redirects": [
-        {"source": "./pages", "destination": "src/pages", "permanent": true }
+        {"source": "./pages", "destination": "/vercel/path0/northern-hack/src/pages", "permanent": true }
     ]
 }
