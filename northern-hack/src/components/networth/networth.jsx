@@ -1,13 +1,12 @@
 import React from "react";
 import "./networth.css";
-import NetworthChart from "./networthChart";
+import NetworthGraph from "./networthGraph";
 import NetworthList from "./networthList";
 
 const Networth = () => {
     return (
         <div className='networth'>
-            <NetworthChart/>
-            <h1>hi</h1>
+            <NetworthGraph/>
             <NetworthList/>
         </div>
     )
