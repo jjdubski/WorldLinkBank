@@ -42,12 +42,11 @@ const Chart = () => {
 
   return (
     <div className='chart-cont'>
+        
       <div className="chart-header">Live Currency Rates</div>
-      
-      {/* Filter Dropdown */}
       <div className="filter-cont">
-        <label htmlFor="currency-filter">Filter by Currency:</label>
-        <select id="currency-filter" value={filter} onChange={handleFilterChange}>
+        <label htmlFor="currency-filter">Filter by Currency: </label>
+        <select  id="currency-filter" value={filter} onChange={handleFilterChange}>
           <option value="USD">Show USD Pairs</option>
           <option value="ALL">Show All</option>
           <option value="EUR">Show EUR Pairs</option>
@@ -56,6 +55,7 @@ const Chart = () => {
           <option value="AUD">Show AUD Pairs</option>
         </select>
       </div>
+      
 
       <div className="color-header">
         <p>Name</p>
@@ -80,8 +80,11 @@ const Chart = () => {
               </tr>
             )}
           </tbody>
+          
         </table>
+        
       )}
+      
     </div>
   );
 };
