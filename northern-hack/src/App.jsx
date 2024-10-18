@@ -4,6 +4,7 @@ import Index from './pages/index';
 import Trade from './pages/trade/trade';
 import Portfolio from './pages/portfolio/portfolio';
 import Rates from './pages/rates/rates';
+import Dashboard from './pages/dashboard/dashboard';
 import "./App.css"
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/trade" element={<Trade />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/rates" element={<Rates />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     </Router>
   );

@@ -3,14 +3,14 @@ import "./navbar.css"
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
+return (
     <div className='navbar-cont'>
         <div className="navbar-left">
             <div className="left-menu">
-                <Link to="/">
-                <img src="./images/logo.png" alt="" className="logo-image" />
-                </Link>
+                <Link to="/" className='flexRow'>
+                    <img src="./images/logo.png" alt="" className="logo-image" />
                     <p className="title">World Link Bank</p>
+                </Link>
             </div>
         </div>
         <div className="navbar-right">
@@ -18,11 +18,11 @@ const Navbar = () => {
                 <Link to='/portfolio'><p className="menu-item">Portfolio</p></Link>
                 <Link to='/rates'><p className="menu-item">Rates</p></Link>
                 <Link to='/trade'><p className="menu-item">Trade</p></Link>
-                <button className="menu-item-button">Dashboard</button>
+                <Link to='/dashboard'><button className="menu-item-button">Dashboard</button></Link>
             </div>
         </div>
     </div>
   )
 }
 
-export default Navbar
+export default Navbar;

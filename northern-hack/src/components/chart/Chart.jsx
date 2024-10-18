@@ -45,7 +45,7 @@ const Chart = () => {
       <div className="chart-header">Live Currency Rates</div>
       
       {/* Filter Dropdown */}
-      <div className="filter-container">
+      <div className="filter-cont">
         <label htmlFor="currency-filter">Filter by Currency:</label>
         <select id="currency-filter" value={filter} onChange={handleFilterChange}>
           <option value="USD">Show USD Pairs</option>
