@@ -1,4 +1,4 @@
-.chart-cont {
+.networth_list {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -10,40 +10,21 @@
     border-radius: 0 0 10px 10px;
 }
 
-.chart-table {
+.networth_table {
     width: 100%;
+    text-align: center;
     border-collapse: collapse;
     box-shadow: 5px 5px 10px rgb(200, 200, 200);
-    table-layout: fixed;
 }
 
-.chart-header{
+/* .network_table_header{
     text-align: center;
     background-color: var(--light-gray);
     margin-bottom: 10px;
     font-size: larger;
     font-weight: 600;
-}
+} */
 
-.color-header{
-    display: flex;
-    color: var(--white);
-    font-weight: 600;
-    background-color: var(--light-green);
-    height: 50px;
-    width: 100%;
-    justify-content: center;
-    gap: auto;
-    align-items: center;
-    border-radius: 10px 10px 0px 0px;
-}
-
-.color-header p{
-    width: 100%;
-    text-align: center;
-    background-color: transparent;
-    color: var(--white);
-}
 
 /* tr td:first-child{
     text-align: left;
@@ -62,21 +43,6 @@ tr td:last-child{
     background-color: var(--light-green);
     z-index: -1;
 } */
-
-
-.table-cell {
-    padding: 10px;
-    border-bottom: 1px solid rgb(180, 179, 179);
-    font-weight: 700;
-    text-align: center;
-}
-
-.table-cell-c{
-    /* color: var(--light-green); */
-    padding: 10px;
-    border-bottom: 1px solid rgb(180, 179, 179);
-    font-weight: 700;
-    text-align: center;
 }
 
 .filter-cont{

@@ -1,5 +1,7 @@
 import React from "react";
 import "./portfolio.css";
+import Networth from "../../components/networth/Networth";
+
 import Navbar from "../../components/navbar/Navbar";
 
 const Portfolio = () => {
@@ -7,6 +9,7 @@ const Portfolio = () => {
         <>
         <Navbar/>
         <div className='portfolio'>
+            <Networth/>
         </div>
         </>
     )
