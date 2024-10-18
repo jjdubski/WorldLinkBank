@@ -15,19 +15,19 @@ const Prediction = () => {
             <div className="prediction-search-output">
                 <div className="prediction-results-table">
                     <div className="prediction-result">
-                        <div className="rate-current">10.25</div>
+                        <div className="rate-current">150.02</div>
                         <div className="currency-name">(¥) JYP</div>
                     </div>
                     <div className="prediction-result">
-                        <div className="rate-current">9.84</div>
+                        <div className="rate-current">0.93</div>
                         <div className="currency-name">(€) EUR</div>
                     </div>
                     <div className="prediction-result">
-                        <div className="rate-current">102.32</div>
+                        <div className="rate-current">0.79</div>
                         <div className="currency-name">(£) GBP</div>
                     </div>
                     <div className="prediction-result">
-                    <div className="rate-current">1.01</div>
+                    <div className="rate-current">1.51</div>
                     <div className="currency-name">(AU$) AUD</div>
                     </div>
                 </div>
