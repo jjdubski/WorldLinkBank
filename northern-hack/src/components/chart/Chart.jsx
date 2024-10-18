@@ -72,7 +72,7 @@ const Chart = () => {
   };
 
   return (
-    <div className='chart-cont-main-c'>
+    <div className='chart-cont'>
       <div className="chart-header">Forex Market Prices</div>
 
       <div className="display-graph">

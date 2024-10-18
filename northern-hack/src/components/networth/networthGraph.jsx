@@ -14,6 +14,11 @@ ChartJS.register(
     Legend
 );
 
+const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+};
+
 const NetworthGraph = ({ holdings, conversionRates }) => {
     if (!holdings || Object.keys(holdings).length === 0) {
         return <p>Loading graph data...</p>;
