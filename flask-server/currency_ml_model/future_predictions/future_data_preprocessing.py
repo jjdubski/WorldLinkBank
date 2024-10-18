@@ -37,6 +37,7 @@ def merge(df):
     return merged_df
 
 def predict_future_vals(df):
+    df['Full_Date'] = df['Combined_Date']
     df.set_index('Combined_Date', inplace=True)
     df.index = pd.to_datetime(df.index, format='%Y-%m-%d')
 

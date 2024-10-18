@@ -47,6 +47,8 @@ def train_model():
         # print(f'Root Mean Squared Error for {currency}: {rmse}')
     print(results)
 
+def get_model():
+    model = ARIMA(train[currency], order=(1, 1, 1))
 
 # def train_model():
 #     data = pd.read_csv('./currency_ml_model/datasets/past_data/shortened_full_data.csv')
