@@ -8,6 +8,8 @@ from . import evaluate
 from . import data_processing
 from .future_predictions.future_data_preprocessing import run
 from .future_predictions.conversion_prediction_chart import create_output_chart
+from .future_predictions.send_predictions import get_future_predictions
+from flask import Blueprint
 
 # data_preprocessing.load_data()
 # data_preprocessing.get_currency_rates()
@@ -27,3 +29,6 @@ from .future_predictions.conversion_prediction_chart import create_output_chart
 
 # run()
 # create_output_chart()
+
+future_predictions_bp = Blueprint('future_predictions', __name__)
+get_future_predictions()
