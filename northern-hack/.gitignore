@@ -11,7 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-./flask-server/currency_ml_model/future_predictions/__pycache__
 
 # Editor directories and files
 .vscode/*
