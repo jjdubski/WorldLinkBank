@@ -1,17 +1,18 @@
 .prediction-cont{
     background-color: var(--dark-green);
     display: flex;
-    width: 100%;
-    height: 70vh;
+    height: 60vh;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .prediction-display{
-    height: 40vh;
     width: 70%;
     background-color: #fff;
     border-radius: 8px;
+    width: 85%;
+    padding: 0px 20px 20px;
 }
 
 .prediction-search-dict{
@@ -64,13 +65,13 @@
 }
 
 .prediction-results-table{
-    height: 240px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly ;
     background-color: transparent;
-
-    gap:20px
+    overflow: hidden;
+    gap: auto;
 }
 
 .prediction-result{
@@ -89,5 +90,5 @@
     height: 100px;
     width: 100%;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }

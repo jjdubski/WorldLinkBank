@@ -34,7 +34,7 @@ const Dashboard = () => {
             ) : (
                 <>
                 <Prediction/>
-                <LineChart chartData={predData} /> // Display LineChart with predData
+                <LineChart chartData={predData} /> 
                 </>
             )}
 
