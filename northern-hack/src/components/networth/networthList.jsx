@@ -2,7 +2,6 @@ import React from "react";
 import "./networth.css";
 
 const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
-    // Check if holdings exist before rendering
     if (!holdings || Object.keys(holdings).length === 0) {
         return <p>Loading holdings...</p>;
     }
