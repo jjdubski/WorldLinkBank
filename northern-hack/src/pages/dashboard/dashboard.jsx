@@ -1,85 +1,41 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import Navbar from "../../components/navbar/Navbar";
-import axios from 'axios';
-import Prediction from "../../components/prediction/Prediction";
+import LineChart from "../../components/dashboard/LineChart";
+import axios from 'axios'; // Missing axios import
 
 const Dashboard = () => {
+    // State to store the predicted data fetched from the API
+    const [predData, setPredData] = useState([]);
+    const [error, setError] = useState(null); // Error state to handle any issues with API
 
-    // const info = [
-    //     {date: '2020-10-01', rates: {USDtoJPY: 105, USDtoGBP: 0.98, USDtoEUR: 0.95, USDtoAUD: 1.3}},
-    //     {date: '2020-10-02', rates: {USDtoJPY: 110, USDtoGBP: 0.78, USDtoEUR: 0.85, USDtoAUD: 1.4}},
-    //     {date: '2020-10-03', rates: {USDtoJPY: 100, USDtoGBP: 1.18, USDtoEUR: 0.75, USDtoAUD: 1.5}},
-    //     {date: '2020-10-04', rates: {USDtoJPY: 120, USDtoGBP: 0.50, USDtoEUR: 0.65, USDtoAUD: 2}},
-    // ]
-
-    // const [chartData, setChartData] = useState({
-    //     datasets: [{
-    //         label: 'Currency Rates EX',
-    //         data: info,
-    //         backgroundColor: [
-    //             'red',
-    //             'blue',
-    //             'green'
-    //         ],
-    //         borderColor: [
-    //             'red',
-    //             'blue',
-    //             'green'
-    //         ],
-    //         tension: 0.5,
-    //         parsing: {
-    //             xAxisKey: 'currency',
-    //             yAxisKey: 'rates.USDtoJPY'
-    //         }
-    //     }]
-    //   });
-
-    // const data = {
-    //     datasets: [{
-    //         label: 'Currency Rates EX',
-    //         data: info,
-    //         backgroundColor: [
-    //             'red',
-    //             'blue',
-    //             'green'
-    //         ],
-    //         borderColor: [
-    //             'red',
-    //             'blue',
-    //             'green'
-    //         ],
-    //         tension: 0.5,
-    //         parsing: {
-    //             xAxisKey: 'currency',
-    //             yAxisKey: 'rate.USDtoJPY'
-    //         }
-    //     }],
-    //     }
-
-        // const config = {
-        //     type: 'line',
-        //     data: info,
-        //     options: {
-        //       responsive: true,
-        //       plugins: {
-        //         legend: {
-        //           position: 'top',
-        //         },
-        //         title: {
-        //           display: false,
-        //           text: 'Chart.js Line Chart'
-        //         }
-        //       }
-        //     },
-        //   };
+    // useEffect hook to fetch the predicted data from the API
+    useEffect(() => {
+        const fetchPredData = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:5000/currency_ml_model/api/future-predictions');
+                setPredData(response.data);
+            } catch (error) {
+                console.error('Error fetching predData:', error);
+                setError('Failed to fetch predData. Please try again later.');
+            }
+        };
+        
+        // Call the fetch function when the component mounts
+        fetchPredData();
+    }, []); // Empty dependency array to run this effect once on mount
 
     return (
         <>
-        <Navbar/>
-        <Prediction/>
+            <Navbar />
+            {error ? ( // Conditional rendering in case there's an error
+                <div>{error}</div>
+            ) : (
+                <LineChart chartData={predData} /> // Display LineChart with predData
+            )}
+
         </>
-    )
+    );
 }
 
 export default Dashboard;
