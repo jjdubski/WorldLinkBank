@@ -48,12 +48,11 @@ const TradeUI = () => {
     return (
         <div className='tradeUI'>
             <div className="trade-cont">
-                <div className="top-cont">
+            <div className="top-cont">
                     <div className="converter">
                         <p className="label-text">Amount</p>
                         <input
                             className="input-style"
-                            type="number"
                             id="amount"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}

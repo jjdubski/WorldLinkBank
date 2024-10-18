@@ -9,11 +9,9 @@
 }
 .trade-cont{
     width: 50%;
-    height: 300px;
+    height: 280px;
     border-radius: 30px;
-    bottom: 180px;
-    /* box-shadow: 1px 1px 10px rgb(185, 185, 185); */
-    padding:0 30px;
+    padding: 0 30px;
     min-width: 600px;
     display: flex;
     flex-direction: column;
@@ -34,7 +32,7 @@
     border: 1px solid rgb(219, 219, 219);
     border-radius: 8px;
     width: 300px;
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +67,7 @@
     }
 }
 
+
 .label-text{
     text-align: left;
     width: 85%;
@@ -80,7 +79,6 @@
 .bottom-cont{
     display: flex;
     justify-content: flex-end;
-    /* background-color: red; */
     align-items: center;
 }
 .text-cont-trade{
