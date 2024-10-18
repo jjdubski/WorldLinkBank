@@ -78,10 +78,12 @@ const Networth = () => {
 
     return (
         <div className='networth'>
-            <h2 className="chart-title">
+            <div className="chart">
+                <h2 className="chart-title">
                 Total Holdings in USD: ${totalInUSD.toFixed(2)}
-            </h2>
-            <NetworthList holdings={holdings} onUpdate={handleUpdate} conversionRates={conversionRates} />
+                </h2>
+                <NetworthList holdings={holdings} onUpdate={handleUpdate} conversionRates={conversionRates} /> 
+            </div>
             <NetworthGraph holdings={holdings} conversionRates={conversionRates} />
         </div>
     );

@@ -22,7 +22,7 @@ const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
     };
 
     return (
-        <div className="chart-cont" id="networth_list">
+        <div className="chart-c" id="networth_list">
             <div className="color-header">
                 <p>Currency</p>
                 <p>Amount</p>
