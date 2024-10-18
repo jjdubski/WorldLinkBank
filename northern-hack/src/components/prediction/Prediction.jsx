@@ -30,6 +30,7 @@ const Prediction = () => {
                     <div className="currency-name">(AU$) AUD</div>
                     </div>
                 </div>
+                <p className='info-panel'>Compared to $1 USD</p>
                 <div className="prediction-search-dict">
                 <div className="converter">
                         <p className="label-text">Date</p>
@@ -43,7 +44,6 @@ const Prediction = () => {
                     </div>
                     <div className="submit-date">Run</div>
             </div>
-            <p className='info-panel'>Compared to $1 USD</p>
             </div>
             
         </div>

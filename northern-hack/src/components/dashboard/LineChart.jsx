@@ -41,7 +41,7 @@ function LineChart({ chartData }) {
   };
 
   return (
-    <div className="chart-container">
+    <div className="line-graph">
       <h2 style={{ textAlign: "center" }}>Currency Exchange Rates Over Time</h2>
       <Line
         data={data}
