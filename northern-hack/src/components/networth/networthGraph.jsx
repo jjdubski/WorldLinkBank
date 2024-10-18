@@ -43,7 +43,7 @@ const NetworthGraph = ({ holdings }) => {
                     options={options}
                     style={{ height: '300px', width: '300px'}}
                 />
-            </div>
+            </div>  
         </div>
     );
 };
