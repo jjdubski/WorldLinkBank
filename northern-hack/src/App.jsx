@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Index from '.././src/pages/index';
+import Index from './pages/index';
 import Trade from '.././src/pages/trade/trade';
 import Portfolio from './pages/portfolio/portfolio';
 import Rates from './pages/rates/rates';
