@@ -4,11 +4,11 @@ from . import model
 from . import evaluate
 from . import data_processing
 from .future_predictions.future_data_preprocessing import run
-from .future_predictions.conversion_prediction_chart import create_output_chart
+from .future_predictions.conversion_prediction_chart import create_output_chart, predict_on_dataset, fix_original_file,predict_data
 
 currency_ml_model_bp = Blueprint('currency_ml_model', __name__)
 
-# from .future_predictions.send_predictions import get_future_predictions
+from .future_predictions.send_predictions import get_future_predictions
 # from flask import Blueprint
 
 # data_preprocessing.load_data()
@@ -28,7 +28,12 @@ currency_ml_model_bp = Blueprint('currency_ml_model', __name__)
 # model.train_model()
 
 # run()
-# create_output_chart()
+# model = create_output_chart()
+# predict_on_dataset(model)
+# fix_original_file()
 
 # future_predictions_bp = Blueprint('future_predictions', __name__)
 # get_future_predictions()
+
+# predict_data()
+get_future_predictions()
