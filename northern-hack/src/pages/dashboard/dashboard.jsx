@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import Navbar from "../../components/navbar/Navbar";
 import axios from 'axios';
+import Prediction from "../../components/prediction/Prediction";
 
 const Dashboard = () => {
 
@@ -76,13 +77,7 @@ const Dashboard = () => {
     return (
         <>
         <Navbar/>
-        <div className='dashboard'>
-            <h1 style={{fontSize: 38}}>FX Desk Dashboard</h1>
-            <p>Coming Soon</p>
-                <div className="chart-container">
-                <h2 style={{ textAlign: "center" }}>Line Chart</h2>
-                </div>
-        </div>
+        <Prediction/>
         </>
     )
 }
