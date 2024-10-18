@@ -6,7 +6,7 @@ fx_rates_bp = Blueprint('fx_rates', __name__)
 CORS(fx_rates_bp)
 
 # API Configuration - using ExchangeRate-API for real-time conversion
-EXCHANGE_RATE_API_KEY = "ac69814bf650545cb9e5098c"
+EXCHANGE_RATE_API_KEY = "203941c890872a95bbce3c8b"
 # '63575e6b4bd69d124ff1f2e1'
 EXCHANGE_RATE_API_URL = "https://v6.exchangerate-api.com/v6/{}/latest/{}"
 
