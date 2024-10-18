@@ -1,0 +1,110 @@
+.tradeUI{
+    width: 100%;
+    height: fit-content;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-green);
+}
+.trade-cont{
+    width: 60%;
+    height: 300px;
+    border-radius: 30px;
+    bottom: 180px;
+    box-shadow: 1px 1px 10px rgb(185, 185, 185);
+    padding:0 30px;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.top-cont{
+    display: flex;
+    height: 50%;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px
+}
+
+.converter{
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 8px;
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.input-style{
+    border: none;
+    text-decoration: none;
+    width: 85%;
+    height: 50%;
+    outline:none;
+    font-size: 1.6rem;
+    color:black;
+    
+    &::placeholder{
+        color:black
+    }
+
+    &:focus{
+        border:transparent;
+        text-decoration: none;
+        border-color: transparent;    
+        outline:none;
+    }
+    &:active{
+        border:none;
+        text-decoration: none;
+        outline:none;
+
+    }
+}
+
+.label-text{
+    text-align: left;
+    width: 85%;
+    color:rgb(120, 119, 119);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.bottom-cont{
+    display: flex;
+    justify-content: space-evenly;
+    gap:65%;
+    align-items: center;
+}
+
+.convert-button{
+    /* border: 1px solid black; */
+    background-color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+    padding: 15px 35px;
+    border-radius: 50px;
+    color:white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    &:hover{
+        border: 2px solid var(--dark-green);
+        background-color: white;
+        color:var(--dark-green);
+        transition: all 0.1s ease-out;
+
+    }
+}
+
+.output-text{
+    font-size: 2rem;
+    color: rgb(56, 56, 56);
+}
