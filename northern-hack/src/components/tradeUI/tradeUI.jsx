@@ -18,33 +18,22 @@ const TradeUI = () => {
         }
         setIsLoading(true);
         try {
-            const response = await axios.get('http://127.0.0.1:5000/fx_rates/api/fx-rates');
-            console.log("Fetched FX rates:", response.data);
-
-            const fxRates = response.data.data;
-
-            const rateData = fxRates.find(
-                rate => rate.from === fromCurrency && rate.to === toCurrency
+            const response = await axios.get(
+                `http://127.0.0.1:5000/fx_rates/convert?base_currency=${fromCurrency}&target_currency=${toCurrency}&amount=${amount}`
             );
-
-            if (rateData) {
-                setConversionRate(rateData.conversion_rate);
-                setError(null);
-                const convertedAmount = parseFloat(amount) * rateData.conversion_rate;
-                setConversionResult(convertedAmount);
-            } else {
-                setError("Conversion rate not available for the selected currency pair.");
-                setConversionResult(null);
-            }
+            const { converted_amount, conversion_rate } = response.data;
+            setConversionRate(conversion_rate);
+            setConversionResult(converted_amount);
+            setError(null);
         } catch (error) {
             console.error("Failed to fetch conversion:", error);
             setError("Failed to fetch conversion rates. Please try again.");
             setConversionResult(null);
         } finally {
-            setIsLoading(false); 
+            setIsLoading(false);
         }
     };
-
+    
     return (
         <div className='tradeUI'>
             <div className="trade-cont">
