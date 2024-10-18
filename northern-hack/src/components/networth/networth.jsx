@@ -1,88 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./networth.css";
 import NetworthGraph from "./networthGraph";
 import NetworthList from "./networthList";
-import axios from 'axios';
 
 const Networth = () => {
-    // Load holdings from localStorage or set default values
     const [holdings, setHoldings] = useState(() => {
-        const savedHoldings = localStorage.getItem('holdings');
+        const savedHoldings = localStorage.getItem("holdings");
         return savedHoldings ? JSON.parse(savedHoldings) : {
-            USD: 10.81,
-            EUR: 81.75,
-            GBP: 19.41,
-            JPY: 9.40,
-            AUD: 190.34,
+            USD: 100,
+            EUR: 100,
+            GBP: 100,
+            JPY: 5000,
+            AUD: 100,
         };
     });
 
-    const [conversionRates, setConversionRates] = useState({});
-    const [totalInUSD, setTotalInUSD] = useState(0);
+    const [totalHoldingsUSD, setTotalHoldingsUSD] = useState(null);
+    const [equivalentInUSD, setEquivalentInUSD] = useState(() => {
+        const savedEquivalent = localStorage.getItem("equivalentInUSD");
+        return savedEquivalent ? JSON.parse(savedEquivalent) : {};
+    });
 
-    // Update localStorage whenever holdings change
     useEffect(() => {
-        localStorage.setItem('holdings', JSON.stringify(holdings));
-        calculateTotalInUSD();
-    }, [holdings]);
-
-    // Fetch conversion rates from API
-    useEffect(() => {
-        const fetchConversionRates = async () => {
+        const calculateTotalHoldings = async () => {
             try {
-                const response = await axios.get(
-                    'http://127.0.0.1:5000/fx_rates/api/fx-rates'
-                );
-                const rates = response.data.data.reduce((acc, rate) => {
-                    acc[`${rate.from}_${rate.to}`] = rate.conversion_rate;
-                    return acc;
-                }, {});
-                setConversionRates(rates);
-                calculateTotalInUSD(rates);
+                let total = 0;
+                const newEquivalentInUSD = {};
+
+                for (const [currency, amount] of Object.entries(holdings)) {
+                    if (currency === "USD") {
+                        total += parseFloat(amount);
+                        newEquivalentInUSD[currency] = parseFloat(amount);
+                    } else {
+                        const response = await axios.get(
+                            `http://127.0.0.1:5000/fx_rates/convert?base_currency=${currency}&target_currency=USD&amount=${amount}`
+                        );
+
+                        if (response.status === 200) {
+                            const { converted_amount } = response.data;
+                            total += converted_amount;
+                            newEquivalentInUSD[currency] = converted_amount;
+                        } else {
+                            console.error("Error fetching exchange rate for", currency);
+                        }
+                    }
+                }
+
+                setTotalHoldingsUSD(total.toFixed(2));
+                setEquivalentInUSD(newEquivalentInUSD);
+
+                // Cache equivalentInUSD in local storage
+                localStorage.setItem("equivalentInUSD", JSON.stringify(newEquivalentInUSD));
             } catch (error) {
-                console.error("Error fetching conversion rates:", error);
+                console.error("Error calculating total holdings:", error);
             }
         };
-        fetchConversionRates();
-    }, []);
 
-    // Calculate total holdings in USD
-    const calculateTotalInUSD = (rates = conversionRates) => {
-        let total = 0;
+        calculateTotalHoldings();
 
-        Object.entries(holdings).forEach(([currency, value]) => {
-            if (currency === 'USD') {
-                total += value;
-            } else {
-                const rateKey = `${currency}_USD`;
-                const rate = rates[rateKey];
-                if (rate) {
-                    total += value * rate;
-                }
-            }
-        });
+        // Cache holdings in local storage whenever they change
+        localStorage.setItem("holdings", JSON.stringify(holdings));
+    }, [holdings]);
 
-        setTotalInUSD(total);
-    };
-
-    // Function to update holdings when changes occur
-    const handleUpdate = (currency, value) => {
-        setHoldings((prevHoldings) => {
-            const updatedHoldings = {
-                ...prevHoldings,
-                [currency]: parseFloat(value) || 0,
-            };
-            return updatedHoldings;
-        });
+    const handleUpdateHoldings = (currency, value) => {
+        setHoldings((prevHoldings) => ({
+            ...prevHoldings,
+            [currency]: value,
+        }));
     };
 
     return (
         <div className='networth'>
-            <h2 className="chart-title">
-                Total Holdings in USD: ${totalInUSD.toFixed(2)}
-            </h2>
-            <NetworthList holdings={holdings} onUpdate={handleUpdate} conversionRates={conversionRates} />
-            <NetworthGraph holdings={holdings} conversionRates={conversionRates} />
+            <div className="chart">
+                <h2 className="chart-title">
+                    Total Holdings in USD: ${totalHoldingsUSD || "Loading..."}
+                </h2>
+                <NetworthList holdings={holdings} onUpdate={handleUpdateHoldings} equivalentInUSD={equivalentInUSD} /> 
+            </div>
+            <NetworthGraph equivalentInUSD={equivalentInUSD} />
         </div>
     );
 };

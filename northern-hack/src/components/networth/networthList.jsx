@@ -1,8 +1,11 @@
 import React from "react";
 import "./networth.css";
 
-const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
-    // Check if holdings exist before rendering
+
+//const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
+
+const NetworthList = ({ holdings, onUpdate, equivalentInUSD }) => {
+
     if (!holdings || Object.keys(holdings).length === 0) {
         return <p>Loading holdings...</p>;
     }
@@ -11,18 +14,8 @@ const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
         onUpdate(currency, value);
     };
 
-    const getValueInUSD = (currency, value) => {
-        if (currency === 'USD') {
-            return value;
-        } else {
-            const rateKey = `${currency}_USD`;
-            const rate = conversionRates[rateKey];
-            return rate ? (value * rate).toFixed(2) : "N/A";
-        }
-    };
-
     return (
-        <div className="chart-cont" id="networth_list">
+        <div className="chart-c" id="networth_list">
             <div className="color-header">
                 <p>Currency</p>
                 <p>Amount</p>
@@ -41,7 +34,7 @@ const NetworthList = ({ holdings, onUpdate, conversionRates }) => {
                                 />
                             </td>
                             <td className="table-cell">
-                                ${getValueInUSD(currency, parseFloat(amount))}
+                                ${equivalentInUSD && equivalentInUSD[currency] ? equivalentInUSD[currency].toFixed(2) : "Calculating..."}
                             </td>
                         </tr>
                     ))}
