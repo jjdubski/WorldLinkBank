@@ -1,9 +1,14 @@
-from .. import future_predictions_bp
+# from .. import future_predictions_bp
+from flask import Blueprint
 import pandas as pd
+from flask_cors import CORS
 
 PREDICTION_DATASET = "./currency_ml_model/datasets/prediction_sets/future_prediction_data.csv"
 
-@future_predictions_bp.route('/api/future_predictions', methods=['GET'])
+currency_ml_model_bp = Blueprint('currency_ml_model', __name__)
+CORS(currency_ml_model_bp)
+
+@currency_ml_model_bp.route('/api/future-predictions', methods=['GET'])
 def get_future_predictions():
     data = get_prediction_values()
     return data
