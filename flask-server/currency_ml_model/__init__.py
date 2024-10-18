@@ -6,6 +6,7 @@ from . import data_preprocessing  # Import the routes for FX rates
 from . import model
 from . import evaluate
 from . import data_processing
+from .future_predictions.future_data_preprocessing import run
 
 # data_preprocessing.load_data()
 # data_preprocessing.get_currency_rates()
@@ -21,4 +22,7 @@ from . import data_processing
 
 # data_processing.remove_earlier_dates()
 
-model.train_model()
+# model.train_model()
+
+# future_data_preprocessing.run()
+run()
