@@ -15,6 +15,10 @@ const Dashboard = () => {
         const fetchPredData = async () => {
             try {
                 const response = await axios.get('http://127.0.0.1:5000/currency_ml_model/api/future-predictions');
+                response.data.forEach(item => {
+                    delete item.JPY;
+                  });
+                console.log(response)
                 setPredData(response.data);
             } catch (error) {
                 console.error('Error fetching predData:', error);
