@@ -15,6 +15,7 @@ ChartJS.register(
     Legend
 );
 
+
 const NetworthGraph = ({ equivalentInUSD }) => {
     // Ensure we have the equivalent in USD data before rendering
     if (!equivalentInUSD || Object.keys(equivalentInUSD).length === 0) {
