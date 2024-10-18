@@ -8,11 +8,11 @@
     background-color: var(--dark-green);
 }
 .trade-cont{
-    width: 60%;
+    width: 50%;
     height: 300px;
     border-radius: 30px;
     bottom: 180px;
-    box-shadow: 1px 1px 10px rgb(185, 185, 185);
+    /* box-shadow: 1px 1px 10px rgb(185, 185, 185); */
     padding:0 30px;
     min-width: 600px;
     display: flex;
@@ -72,20 +72,24 @@
 .label-text{
     text-align: left;
     width: 85%;
-    color:rgb(120, 119, 119);
+    color: rgb(92, 92, 92);
     font-size: 1.1rem;
     font-weight: 300;
 }
 
 .bottom-cont{
     display: flex;
-    justify-content: space-evenly;
-    gap:65%;
+    justify-content: flex-end;
+    /* background-color: red; */
     align-items: center;
+}
+.text-cont-trade{
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: start;
 }
 
 .convert-button{
-    /* border: 1px solid black; */
     background-color: var(--dark-green);
     border: 1px solid var(--dark-green);
     padding: 15px 35px;
@@ -106,5 +110,19 @@
 
 .output-text{
     font-size: 2rem;
-    color: rgb(56, 56, 56);
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+.cont-of-conts{
+    display: flex;
+    width: 100%;
+    /* background-color: red; */
+    justify-content: space-between;
+}
+
+.conversion-rate-text{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(92, 92, 92);
 }
