@@ -1,7 +1,7 @@
 import React from "react";
 import "./networth.css";
 
-const NetworthList = ({ holdings, onUpdate }) => {
+const NetworthList = ({ holdings, onUpdate, totalInUSD }) => {
     // Check if holdings exist before rendering
     if (!holdings || Object.keys(holdings).length === 0) {
         return <p>Loading holdings...</p>;
@@ -13,9 +13,9 @@ const NetworthList = ({ holdings, onUpdate }) => {
 
     return (
         <div className="chart-cont" id="networth_list">
+            {/* Display Total Holdings above the table */}
             <h2 className="chart-title">
-                Total Holdings in USD: $
-                {Object.values(holdings).reduce((acc, amount) => acc + parseFloat(amount), 0).toFixed(2)}
+                Total Holdings in USD: ${totalInUSD.toFixed(2)}
             </h2>
             <div className="color-header">
                 <p>Currency</p>
