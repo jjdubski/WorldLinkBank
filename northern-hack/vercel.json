@@ -1,8 +1,5 @@
 {
     "rewrites":  [
-        {"source": "./", "destination": "../src"}
-    ],
-    "redirects": [
-        {"source": "./pages", "destination": "/vercel/path0/northern-hack/src/pages", "permanent": true }
+        {"source": "/(.*)", "destination": "/"}
     ]
 }
