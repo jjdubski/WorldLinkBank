@@ -71,15 +71,14 @@ const Networth = () => {
     };
 
     return (
-
         <div className='networth'>
             <div className="chart">
                 <h2 className="chart-title">
-                <h2>Total Holdings in USD: ${totalHoldingsUSD || "Loading..."}</h2>
+                    Total Holdings in USD: ${totalHoldingsUSD || "Loading..."}
                 </h2>
-                <NetworthList holdings={holdings} onUpdate={handleUpdate} conversionRates={conversionRates} /> 
+                <NetworthList holdings={holdings} onUpdate={handleUpdateHoldings} equivalentInUSD={equivalentInUSD} /> 
             </div>
-            <NetworthGraph holdings={holdings} conversionRates={conversionRates} />
+            <NetworthGraph equivalentInUSD={equivalentInUSD} />
         </div>
     );
 };

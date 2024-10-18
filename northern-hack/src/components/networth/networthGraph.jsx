@@ -6,7 +6,6 @@ import {
     Tooltip,
     Legend
 } from 'chart.js';
-
 import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -14,7 +13,6 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-
 
 const NetworthGraph = ({ equivalentInUSD }) => {
     // Ensure we have the equivalent in USD data before rendering
