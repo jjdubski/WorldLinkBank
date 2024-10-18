@@ -1,30 +1,24 @@
 .chart-cont {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    min-height: 500px;
-    height: fit-content;
-    overflow: hidden;
+    width: 70%;
     margin: 50px;
     padding-bottom: 30px;
+    border-radius: 50px;
     align-items: center;
-    min-height: 600px;
+    max-height: 400px;
+    /* padding-bottom: 100px; */
     
 }
 
-.chart-table {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 10px 20px -10px rgba(134, 134, 134, 0.5);
-    table-layout: fixed;
-}
 
 .chart-header{
     text-align: center;
     background-color: var(--light-gray);
     margin-bottom: 10px;
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-weight: 400;
 }
 
 .color-header{
@@ -37,7 +31,7 @@
     justify-content: center;
     gap: auto;
     align-items: center;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .color-header p{
@@ -50,29 +44,9 @@
 }
 
 
-
-/* tr td:first-child{
-    text-align: left;
-    padding-left: 9vw;
-}
-tr td:last-child{   
-    padding-right: 8vw;
-} */
-
-/* 
-.chart-header{
-    text-align: left;
-    font-weight: 600;
-    font-size: 1rem;
-    border-bottom: 1px solid rgb(180, 179, 179);
-    background-color: var(--light-green);
-    z-index: -1;
-} */
-
-
 .table-cell {
     padding: 10px;
-    border-bottom: 1px solid rgb(180, 179, 179);
+    border-bottom: 1px solid rgb(211, 211, 211);
     font-weight: 600;
     color:black;
     text-align: center; 
@@ -81,7 +55,7 @@ tr td:last-child{
 
 .table-cell-c{
     padding: 0 10px;
-    border-bottom: 1px solid rgb(180, 179, 179);
+    border-bottom: 1px solid rgb(211, 211, 211);
     font-weight: 400;
     text-align: center;
 }
@@ -93,3 +67,151 @@ tr td:last-child{
 .filter-cont{
     margin: 0 0 10px 0;
 }
+
+
+.label-text-chart{
+    text-align: left;
+    width: 85%;
+    color: rgb(92, 92, 92);
+    font-size: 0.8rem;
+    font-weight: 300;
+    
+}
+
+.input-style-chart{
+    border: none;
+    text-decoration: none;
+    width: 85%;
+    height: 50%;
+    outline:none;
+    font-size: 1rem;
+    color:black;
+    
+    &::placeholder{
+        color:black
+    }
+
+    &:focus{
+        border:transparent;
+        text-decoration: none;
+        border-color: transparent;    
+        outline:none;
+    }
+    &:active{
+        border:none;
+        text-decoration: none;
+        outline:none;
+
+    }
+}
+
+/* ============ */
+
+.display-graph{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    box-shadow: 1px 1px 10px rgb(144, 144, 144);
+    border-radius: 20px;
+}
+
+.header-section-graph{
+    height: 100px;
+    display: flex;
+    border-radius: 20px 20px 0 0;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    width: 100%;
+    background: rgb(0,36,3);
+    background: linear-gradient(270deg, rgba(55,130,56,1) 10%, rgba(30,83,31,1) 25%, rgba(10,51,12,1) 53%, rgba(0,36,3,1) 100%);
+    
+}
+
+.header-graph-t{
+    padding: 0 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    /* border-bottom: 3px solid white; */
+}
+
+.search-section-graph{
+    background-color: transparent;
+    padding: 40px;
+}
+
+.converter-chart{
+    border: 1px solid rgb(78, 78, 78);
+    border-radius: 50px;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.data-section-graph{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-left:40px;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+
+.chart-row-header-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(186, 186, 186);
+
+}
+
+.chart-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    align-items: center;
+    border-bottom: 1px solid rgb(186, 186, 186);
+}
+
+.cell-header-cell{
+    font-weight: 800;
+}
+
+.cell2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 40px;
+    transition: all 0.2s ease-out;
+
+}
+
+
+.bottom-text{
+    padding-bottom: 60px;
+}
+
+.green-bg {
+    background-color: green; 
+    border-radius: 5px;
+    color:white;
+  }
+  
+  .red-bg {
+    background-color: red;
+    border-radius: 5px;
+    color:white;
+
+  }
+
+  
