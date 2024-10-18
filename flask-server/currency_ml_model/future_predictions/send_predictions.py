@@ -3,7 +3,7 @@ from flask import Blueprint
 import pandas as pd
 from flask_cors import CORS
 
-PREDICTION_DATASET = "./currency_ml_model/datasets/prediction_sets/future_prediction_data.csv"
+PREDICTION_DATASET = "./currency_ml_model/datasets/prediction_sets/new_final_full.csv"
 
 currency_ml_model_bp = Blueprint('currency_ml_model', __name__)
 CORS(currency_ml_model_bp)
