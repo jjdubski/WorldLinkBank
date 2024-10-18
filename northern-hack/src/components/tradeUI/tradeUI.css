@@ -4,19 +4,21 @@
     height: 600px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: var(--dark-green);
+    background: linear-gradient(to bottom, rgba(10,51,12,1)67%, var(--light-gray) 33%);  
+    /* border-radius: 50; */
 }
 .trade-cont{
     width: 50%;
     height: 280px;
     border-radius: 30px;
-    padding: 0 30px;
+    padding: 10px 50px;
     min-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
+    box-shadow: 0 10px 20px -10px rgba(134, 134, 134, 0.5);
 }
 
 .top-cont{
@@ -108,7 +110,7 @@
 
 .output-text{
     font-size: 2rem;
-    color: rgb(0, 0, 0);
+    color: var(--dark-green);
     font-weight: 700;
 }
 
@@ -123,4 +125,34 @@
     font-size: 1rem;
     font-weight: 400;
     color: rgb(92, 92, 92);
+}
+
+.h1-trade{
+    font-weight: 400;
+    font-size: 3rem;
+    background-color: transparent;
+    color: white;
+}
+
+.convert-text{
+    background-color: transparent;
+    color:rgb(206, 206, 206);
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.text-cont-trade-u{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.bottom-text{
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 0.8rem;
+    color:black;
 }

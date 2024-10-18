@@ -9,7 +9,11 @@ return (
             <div className="left-menu">
                 <Link to="/" className='flexRow'>
                     <img src="./images/logo.png" alt="" className="logo-image" />
-                    <p className="title">World Link Bank</p>
+                    <div className="stacker">
+                        <p className="title">WorldLink</p>
+                        <p className="title-asset">Currency Exhange</p>
+                    </div>
+                    
                 </Link>
             </div>
         </div>

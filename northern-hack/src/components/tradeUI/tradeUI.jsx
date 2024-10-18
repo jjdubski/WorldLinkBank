@@ -36,6 +36,11 @@ const TradeUI = () => {
     
     return (
         <div className='tradeUI'>
+            <div className="text-cont-trade-u">
+                <p className="h1-trade">WorldLink Currency Converter</p>
+                <p className="convert-text">Convert {fromCurrency} to {toCurrency}</p>
+            </div>
+            
             <div className="trade-cont">
             <div className="top-cont">
                     <div className="converter">
@@ -45,7 +50,7 @@ const TradeUI = () => {
                             id="amount"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
-                            placeholder="1.00"
+                            placeholder="0.00"
                         />
                     </div>
                     <div className="converter">
@@ -106,8 +111,8 @@ const TradeUI = () => {
                     </button>
                 </div>
                 </div>
-
             </div>
+            <p className="bottom-text">We use the mid-market rate for our Converter. This is for informational purposes only. You won’t receive this rate when sending money.</p>
         </div>
     );
 };
