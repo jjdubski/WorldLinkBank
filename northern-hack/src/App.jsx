@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Index from './pages/index';
 import Trade from '.././src/pages/trade/trade';
 import Portfolio from './pages/portfolio/portfolio';
-import Rates from './pages/rates/rates';
+// import Rates from './pages/rates/rates';
 import Dashboard from './pages/dashboard/dashboard';
 import "./App.css"
 
@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/trade" element={<Trade />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/rates" element={<Rates />} />
+          {/* <Route path="/rates" element={<Rates />} /> */}
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     </Router>

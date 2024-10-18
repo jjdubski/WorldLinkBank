@@ -1,7 +1,7 @@
 import React from "react";
 import "./trade.css";
 import Navbar from "../../components/navbar/Navbar";
-import TradeUI from "../../components/tradeUI/TradeUI";
+import TradeUI from "../../components/tradeUI/tradeUI";
 
 const Trade = () => {
     return (
