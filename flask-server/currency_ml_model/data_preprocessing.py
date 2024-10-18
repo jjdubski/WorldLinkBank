@@ -1,7 +1,6 @@
 import pandas as pd
 import requests
 import os
-from . import currency_ml_model_bp
 from sklearn.preprocessing import StandardScaler
 
 OPEN_EXCHANGE_RATES_API_KEY = "0167e5ae283a42838d4b6069b8583bec"
