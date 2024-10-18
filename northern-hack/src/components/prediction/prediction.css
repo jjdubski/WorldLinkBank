@@ -5,14 +5,22 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-direction: column;
+}
+
+.prediction-title{
+    margin-bottom: 20px;
+    background-color: transparent;
+    font-size: 4rem;
+    font-weight: 300;
+    color:white
 }
 
 .prediction-display{
-    width: 70%;
     background-color: #fff;
     border-radius: 8px;
-    width: 85%;
-    padding: 0px 20px 20px;
+    width: 50%;
+    padding: 20px 20px 20px 20px;
 }
 
 .prediction-search-dict{
@@ -62,6 +70,7 @@
     background-color: transparent;
     font-weight: 300;
     font-size: 1rem;
+    margin: 20px 0px;
 }
 
 .prediction-results-table{
