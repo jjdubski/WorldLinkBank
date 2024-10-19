@@ -13,24 +13,26 @@ const Prediction = () => {
         <p className="prediction-title">FX Prediction Model</p>
         <div className="prediction-display">
             <div className="prediction-search-output">
+
                 <div className="prediction-results-table">
                     <div className="prediction-result">
-                        <div className="rate-current">150.02</div>
+                        <div className="rate-current">{results.JYP}</div>
                         <div className="currency-name">(¥) JYP</div>
                     </div>
                     <div className="prediction-result">
-                        <div className="rate-current">0.93</div>
+                        <div className="rate-current">{results.EUR}</div>
                         <div className="currency-name">(€) EUR</div>
                     </div>
                     <div className="prediction-result">
-                        <div className="rate-current">0.79</div>
+                        <div className="rate-current">{results.GBP}</div>
                         <div className="currency-name">(£) GBP</div>
                     </div>
                     <div className="prediction-result">
-                    <div className="rate-current">1.51</div>
+                    <div className="rate-current">{results.AUD}</div>
                     <div className="currency-name">(AU$) AUD</div>
                     </div>
                 </div>
+
                 <p className='info-panel'>Compared to $1 USD</p>
                 <div className="prediction-search-dict">
                 <div className="converter">
